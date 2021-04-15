@@ -55,7 +55,9 @@ def parallel(size):
         threadHandler[j].join()
 
 
-
+start = t.time()
 parallel(poolSize)
+end = t.time()
+totalTime = end - start
 
-print(matrixC)
+print(totalTime)
