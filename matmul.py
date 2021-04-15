@@ -60,4 +60,7 @@ parallel(poolSize)
 end = t.time()
 totalTime = end - start
 
-print(totalTime)
+# guardar archivo
+file = open(fileO, "w")
+file.write("%s = %s\n" % ("Time: ", totalTime))
+matrixC.tofile(fileO, sep=',', format='%10.5f')
