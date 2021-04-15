@@ -8,16 +8,30 @@ import numpy as np
 # captura de argumentos en linea de comandos
 print('Number of arguments:', len(sys.argv))
 print('Argument List:', str(sys.argv))
+try:
 
-fileA = open(sys.argv[1], "rb")
-matrix = np.loadtxt(fileA, delimiter=",")
+    fileA = open(sys.argv[1], "rb")
+    matrixA = np.loadtxt(fileA, delimiter=",")
 
-fileB = sys.argv[2]
+    fileB = open(sys.argv[2], "rb")
+    matrixB = np.loadtxt(fileB, delimiter=",")
+    poolSize = int(sys.argv[3])
+except:
+    print("ERROR, check input parameters & existence of input files in the correct directory")
+    print("\nto retry: python3 matmul.py <matrixA.csv> <matrixB.csv> <Pool size (int)> <OutputFile.txt>")
 fileO = sys.argv[4]
-poolSize = int(sys.argv[3])
+
+print("MATRIX A")
+print(matrixA)
+
+print("\n MATRIX B")
+print(matrixB)
+
+print("\n THREADS: "+ str(poolSize))
 
 
-print(matrix)
+
+
 
 
 
