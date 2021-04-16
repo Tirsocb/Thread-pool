@@ -87,6 +87,7 @@ start = t.time()
 parallel(poolSize)
 end = t.time()
 totalTime = end - start
+print("\nTiempo total de ejecución: " + totalTime + " segundos\n")
 
 """
 Guardar los resultados en un archivo .csv
