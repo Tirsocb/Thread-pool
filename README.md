@@ -1,6 +1,6 @@
 # Multiplicación de matrices con Multiprocesamiento
 
-## Los hilos en Python
+## :arrows_clockwise: Los hilos en Python
 
 El “Threading” es una técnica de programación que permite que una aplicación ejecute simultáneamente varias operaciones en el mismo espacio de proceso. A cada flujo de ejecución que se origina durante el procesamiento se le denomina hilo o subproceso, pudiendo realizar o no una misma tarea. En Python, el módulo “threading” hace posible la programación con hilos.
 
@@ -13,7 +13,7 @@ Permite simplificar el diseño de las aplicaciones que necesitan ejecutar varias
 
 Para cada hilo de un proceso existe un puntero que realiza el seguimiento de las instrucciones que se ejecutan en cada momento. Además, la ejecución de un hilo se puede detener temporalmente o de manera indefinida. En general, un proceso sigue en ejecución cuando al menos uno de sus hilos permanece activo, es decir, cuando el último hilo concluye su cometido, termina el proceso, liberándose en ese momento todos los recursos utilizados.
 
-## Objetos Thread: los hilos
+## :beginner: Objetos Thread: los hilos
 
 En Python un objeto “Thread” representa una determinada operación que se ejecuta como un subproceso independiente, es decir, es la representación de un hilo. Se pueden definir de dos formas los hilos:
 
@@ -40,7 +40,7 @@ target=contar)
 hilo.start()
 ```
 
-## Hilos con argumentos
+## :round_pushpin: Hilos con argumentos
 
 Tenemos la posibilidad de enviar valores a los hilos para que los puedan utilizar. Por este motivo existen los argumentos `args` y `kwargs` en el constructor.
 
@@ -53,7 +53,7 @@ hilo = threading.Thread(target=contar, args=(num_hilo,)
 hilo.start()
 ```
 
-## Multiplicación de Matrices
+## :chart_with_downwards_trend: Multiplicación de Matrices
 
 Multiplicar dos matrices es bastante simple. Se selecciona una fila de la primera matriz y una columna de la segunda matriz y se multiplican los elementos correspondientes y añadirlos a obtener el primer elemento, para luego pasar a la siguiente columna haga lo mismo para obtener el siguiente elemento y así sucesivamente.
 
@@ -108,6 +108,48 @@ Dados cuatro núcleos debería aumentar el rendimiento del algoritmo en cuatro, 
 
 Ejecutar el cálculo paralelo da como resultado el uso de los cuatro núcleos. Puedes verlo en la captura de pantalla a continuación.
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/Tirsocb/Thread-pool/blob/main/img/Screenshot%20from%202021-04-16%2011-23-45.png)
 
 Hemos ejecutado el programa para multiplicar matrices y también nos aseguramos de que realmente se ejecute en múltiples procesadores.
+
+## :bulb: How to use
+
+Para usar este programa, es necesario hacer `git clone` y luego `cd ` al folder que contiene el repo.
+
+```git
+git clone https://github.com/Tirsocb/Thread-pool.git
+cd Thread-pool 
+```
+Luego ejecutar
+
+```git
+python3 matmul.py matA.csv matB.csv 4 output.csv
+```
+
+Estos corresponden a
+
+```git
+python3 matmul.py <Matrix_A.csv> <Matrix_B.csv> <Pool size o cores> <Output_File.csv>
+```
+1. Los archivos de entrada
+2. El pool size: tamaño del pool a utilizar
+3. El nombre del archivo de salida
+
+## :white_check_mark: Resultado
+
+El programa muestra los resultados de la multiplicación de matrices de forma paralela. También muestra el tiempo que se tarda (en s) en ejecutar las multiplicaciones y el número de cores utilizados en un archivo `.csv`.
+
+## :man_technologist: Developers 
+
+[Tirso Córdova](https://github.com/Tirsocb) :robot:
+
+[Abner Xocop Chacach](https://github.com/abnerxch) :ghost:
+
+# :shipit: Referencias
+
+[Javier Ceballos Fernández](https://www.redeszone.net/2017/07/13/curso-python-volumen-xx-hilos-parte-i/)
+
+[khalidgt95](https://github.com/khalidgt95/Python-MultiThreading/blob/master/Matrix%20Multiplication.py)
+
+# :open_file_folder: License
+[MIT](https://choosealicense.com/licenses/mit/)
