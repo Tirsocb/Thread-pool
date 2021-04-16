@@ -61,6 +61,8 @@ end = t.time()
 totalTime = end - start
 
 # guardar archivo
+poolSize = str(poolSize)
 file = open(fileO, "w")
 file.write("%s = %s\n" % ("Time: ", totalTime))
+file.write("%s = %s\n" % ("Treads: ", poolSize))
 matrixC.tofile(fileO, sep=',', format='%10.5f')
